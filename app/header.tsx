@@ -1,13 +1,20 @@
 'use client'
 import { TextEffect } from '@/components/ui/text-effect'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export function Header() {
+  const pathname = usePathname()
+
+  if (pathname !== '/') {
+    return null
+  }
+
   return (
     <header className="mb-8 flex items-center justify-between">
       <div>
         <Link href="/" className="font-medium text-black dark:text-white">
-          Julien Nim
+          Octavio-Daniel Vizaru
         </Link>
         <TextEffect
           as="p"
@@ -16,7 +23,7 @@ export function Header() {
           className="text-zinc-600 dark:text-zinc-500"
           delay={0.5}
         >
-          Design Engineer
+          Junior Full-Stack Developer | Automation & Computer Science Student
         </TextEffect>
       </div>
     </header>

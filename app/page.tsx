@@ -136,9 +136,27 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
+          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <span className="font-medium text-zinc-900 dark:text-zinc-100">
+              Junior Full-Stack Developer
+            </span>{' '}
+            at{' '}
+            <a
+              className="underline text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+              href="https://www.getstoryteller.com"
+              target="_blank"
+            >
+              Storyteller
+            </a>
+            . Final Year Automation & Computer Science Student at the{' '}
+            <span className="font-medium text-zinc-900 dark:text-zinc-100">
+              Technical University of Cluj-Napoca
+            </span>
+            . Passionate about{' '}
+            <span className="font-medium text-zinc-900 dark:text-zinc-100">
+              AI and Software Development
+            </span>
+            .
           </p>
         </div>
       </motion.section>
@@ -161,7 +179,7 @@ export default function Personal() {
                   target="_blank"
                 >
                   {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
+                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full dark:bg-zinc-50"></span>
                 </a>
                 <p className="text-base text-zinc-600 dark:text-zinc-400">
                   {project.description}
@@ -179,11 +197,9 @@ export default function Personal() {
         <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
-            <a
+            <Link
               className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
               href={job.link}
-              target="_blank"
-              rel="noopener noreferrer"
               key={job.id}
             >
               <Spotlight
@@ -205,7 +221,7 @@ export default function Personal() {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </motion.section>
