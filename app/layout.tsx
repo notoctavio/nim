@@ -13,16 +13,16 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nim-fawn.vercel.app/'),
+  metadataBase: new URL('https://octavio-daniel.vercel.app/'),
   alternates: {
     canonical: '/',
   },
   title: {
-    default: 'Nim - Personal website template',
-    template: '%s | Nim',
+    default: 'Octavio Daniel - Full-Stack Developer',
+    template: '%s | Octavio Daniel',
   },
   description:
-    'Nim is a free and open-source personal website template built with Next.js 15, React 19 and Motion-Primitives.',
+    'Junior Full-Stack Developer at Storyteller, specializing in AI-assisted development, RAG architectures, and modern web technologies.',
 }
 
 const geist = Geist({

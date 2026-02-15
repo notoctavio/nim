@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export const metadata = {
   title: 'Storyteller — Junior Full-Stack Developer',
   description:
@@ -10,9 +12,11 @@ export const metadata = {
 <div className="not-prose flex flex-col gap-3">
   <div className="flex items-center gap-3">
     <div className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded bg-zinc-100 p-0.5 dark:bg-zinc-800">
-      <img
+      <Image
         src="https://www.google.com/s2/favicons?sz=128&domain=www.getstoryteller.com"
         alt="Storyteller logo"
+        width={24}
+        height={24}
         className="h-full w-full object-contain grayscale transition-all hover:grayscale-0"
       />
     </div>

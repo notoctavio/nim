@@ -1,6 +1,7 @@
 'use client'
 import { WORK_EXPERIENCE } from '@/app/data'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import { motion } from 'motion/react'
 import { use } from 'react'
 
@@ -49,9 +50,11 @@ export default function WorkPage({
       >
         <div className="flex items-center gap-3">
           <div className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded bg-zinc-100 p-0.5 dark:bg-zinc-800">
-            <img
+            <Image
               src={job.logo}
               alt={`${job.company} logo`}
+              width={24}
+              height={24}
               className="h-full w-full object-contain grayscale transition-all hover:grayscale-0"
             />
           </div>

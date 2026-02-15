@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { motion } from 'motion/react'
 import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
@@ -9,6 +10,7 @@ import {
   MorphingDialogContent,
   MorphingDialogClose,
   MorphingDialogContainer,
+  MorphingDialogImage,
 } from '@/components/ui/morphing-dialog'
 import Link from 'next/link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
@@ -48,8 +50,8 @@ function ProjectMedia({ project }: { project: (typeof PROJECTS)[0] }) {
     <MorphingDialog
       transition={{
         type: 'spring',
-        bounce: 0,
-        duration: 0.3,
+        bounce: 0.05,
+        duration: 0.4,
       }}
     >
       <MorphingDialogTrigger>
@@ -64,10 +66,11 @@ function ProjectMedia({ project }: { project: (typeof PROJECTS)[0] }) {
             />
           ) : (
             <div className="relative h-full w-full cursor-zoom-in">
-              <img
+              <MorphingDialogImage
                 src={project.images?.after || src}
                 alt={project.name}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-full w-full object-cover"
+                whileHover={{ scale: 1.05 }}
               />
             </div>
           )}
@@ -80,9 +83,11 @@ function ProjectMedia({ project }: { project: (typeof PROJECTS)[0] }) {
               {hasComparison ? (
                 <>
                   <div className="flex-1 space-y-2">
-                    <img
+                    <Image
                       src={project.images!.before!}
                       alt="Original"
+                      width={600}
+                      height={338}
                       className="aspect-video w-full rounded-xl object-cover"
                     />
                     <p className="text-center text-[10px] font-medium tracking-widest text-zinc-400 uppercase">
@@ -90,7 +95,7 @@ function ProjectMedia({ project }: { project: (typeof PROJECTS)[0] }) {
                     </p>
                   </div>
                   <div className="flex-1 space-y-2">
-                    <img
+                    <MorphingDialogImage
                       src={project.images!.after!}
                       alt="Detected"
                       className="aspect-video w-full rounded-xl object-cover"
@@ -101,7 +106,7 @@ function ProjectMedia({ project }: { project: (typeof PROJECTS)[0] }) {
                   </div>
                 </>
               ) : (
-                <img
+                <MorphingDialogImage
                   src={src}
                   alt={project.name}
                   className="aspect-video w-full rounded-xl object-cover"
