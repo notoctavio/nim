@@ -1,8 +1,6 @@
 'use client'
 import { WORK_EXPERIENCE } from '@/app/data'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import { ArrowLeftIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 import { use } from 'react'
 
@@ -38,57 +36,44 @@ export default function WorkPage({
   }
 
   return (
-    <motion.main
-      className="flex min-h-[calc(100vh-theme(spacing.48))] flex-col space-y-12"
+    <motion.div
+      className="flex flex-col space-y-10"
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
     >
-      <motion.div
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-        className="flex items-center justify-between"
-      >
-        <Link
-          href="/"
-          className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-        >
-          <ArrowLeftIcon className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-          Back to projects
-        </Link>
-      </motion.div>
-
       <motion.header
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
-        className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between"
+        className="not-prose flex flex-col gap-3"
       >
-        <div className="flex gap-4">
-          <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-zinc-200 bg-white p-2 dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="flex items-center gap-3">
+          <div className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded bg-zinc-100 p-0.5 dark:bg-zinc-800">
             <img
               src={job.logo}
               alt={`${job.company} logo`}
-              className="h-full w-full object-contain"
+              className="h-full w-full object-contain grayscale transition-all hover:grayscale-0"
             />
           </div>
-          <div>
-            <h1 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
-              {job.company}
-            </h1>
-            <p className="text-base font-medium text-zinc-600 dark:text-zinc-400">
-              {job.title}
-            </p>
-          </div>
+          <h1 className="text-xl font-medium tracking-tight text-zinc-900 dark:text-zinc-100">
+            {job.company}
+          </h1>
         </div>
-        <div className="text-sm font-medium text-zinc-500 dark:text-zinc-400 sm:text-right">
-          {job.start} — {job.end}
+        <div className="flex flex-wrap items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+          <span className="font-medium text-zinc-800 dark:text-zinc-200">
+            {job.title}
+          </span>
+          <span className="text-zinc-300 dark:text-zinc-700">•</span>
+          <span className="text-zinc-400 dark:text-zinc-500">
+            {job.start} — {job.end}
+          </span>
         </div>
+        <div className="mt-2 h-px w-full bg-zinc-100 dark:bg-zinc-800/50" />
       </motion.header>
 
       <motion.article
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
-        className="prose prose-zinc max-w-none dark:prose-invert"
       >
         <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
           {job.description}
@@ -109,6 +94,6 @@ export default function WorkPage({
           </ul>
         )}
       </motion.article>
-    </motion.main>
+    </motion.div>
   )
 }
