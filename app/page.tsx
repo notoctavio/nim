@@ -74,7 +74,7 @@ function ProjectMedia({ project }: { project: (typeof PROJECTS)[0] }) {
         </div>
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
-        <MorphingDialogContent className="relative flex max-w-5xl flex-col items-center justify-center rounded-3xl bg-white p-4 shadow-2xl ring-1 ring-zinc-200/50 dark:bg-zinc-950 dark:ring-zinc-800/50 md:p-8">
+        <MorphingDialogContent className="relative flex max-w-5xl flex-col items-center justify-center rounded-3xl bg-white p-4 ring-1 shadow-2xl ring-zinc-200/50 md:p-8 dark:bg-zinc-950 dark:ring-zinc-800/50">
           <div className="w-full space-y-6">
             <div className="flex flex-col gap-4 sm:flex-row">
               {hasComparison ? (
@@ -85,7 +85,7 @@ function ProjectMedia({ project }: { project: (typeof PROJECTS)[0] }) {
                       alt="Original"
                       className="aspect-video w-full rounded-xl object-cover"
                     />
-                    <p className="text-center text-[10px] font-medium tracking-widest uppercase text-zinc-400">
+                    <p className="text-center text-[10px] font-medium tracking-widest text-zinc-400 uppercase">
                       Input
                     </p>
                   </div>
@@ -95,7 +95,7 @@ function ProjectMedia({ project }: { project: (typeof PROJECTS)[0] }) {
                       alt="Detected"
                       className="aspect-video w-full rounded-xl object-cover"
                     />
-                    <p className="text-center text-[10px] font-medium tracking-widest uppercase text-zinc-500">
+                    <p className="text-center text-[10px] font-medium tracking-widest text-zinc-500 uppercase">
                       Detection Result
                     </p>
                   </div>
@@ -183,13 +183,13 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
             <span className="font-medium text-zinc-900 dark:text-zinc-100">
               Junior Full-Stack Developer
             </span>{' '}
             at{' '}
             <a
-              className="underline text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+              className="text-zinc-900 underline transition-colors hover:text-zinc-600 dark:text-zinc-100 dark:hover:text-zinc-300"
               href="https://www.getstoryteller.com"
               target="_blank"
             >
