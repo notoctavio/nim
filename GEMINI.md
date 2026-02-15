@@ -1,6 +1,6 @@
-# Project Context: Nim
+# Project Context: Octavio Daniel's Portfolio
 
-This project is a personal portfolio and blog built with a modern web stack, focusing on high-quality UI/UX and animations.
+This project is the personal portfolio and blog of Octavio Daniel, built with a modern web stack, focusing on high-quality UI/UX and animations.
 
 ## Tech Stack
 
