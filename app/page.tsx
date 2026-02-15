@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { motion } from 'motion/react'
 import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
@@ -82,9 +83,11 @@ function ProjectMedia({ project }: { project: (typeof PROJECTS)[0] }) {
               {hasComparison ? (
                 <>
                   <div className="flex-1 space-y-2">
-                    <img
+                    <Image
                       src={project.images!.before!}
                       alt="Original"
+                      width={600}
+                      height={338}
                       className="aspect-video w-full rounded-xl object-cover"
                     />
                     <p className="text-center text-[10px] font-medium tracking-widest text-zinc-400 uppercase">

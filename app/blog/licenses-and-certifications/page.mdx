@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export const metadata = {
   title: 'Licenses and Certifications',
   description:
@@ -56,10 +58,12 @@ A systematic registry of my professional credentials and academic milestones, sp
     >
       <div className="flex items-start justify-between">
         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-50 p-1.5 dark:bg-zinc-800">
-          <img
+          <Image
             src={`https://www.google.com/s2/favicons?sz=128&domain=${cert.issuerUrl}`}
             className="h-full w-full object-contain grayscale transition-all group-hover:grayscale-0"
             alt={cert.issuer}
+            width={40}
+            height={40}
           />
         </div>
         <a
@@ -165,10 +169,12 @@ A systematic registry of my professional credentials and academic milestones, sp
     >
       <div className="flex items-center gap-4">
         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-zinc-100 bg-zinc-50/50 p-1.5 dark:border-zinc-800/50 dark:bg-zinc-900/50">
-          <img
+          <Image
             src={`https://www.google.com/s2/favicons?sz=128&domain=${cert.issuerUrl}`}
             className="h-full w-full object-contain grayscale transition-all group-hover:grayscale-0"
             alt={cert.issuer}
+            width={32}
+            height={32}
           />
         </div>
         <div>

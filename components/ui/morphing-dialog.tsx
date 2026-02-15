@@ -15,6 +15,7 @@ import {
   MotionConfig,
   Transition,
   Variant,
+  type HTMLMotionProps,
 } from 'motion/react'
 import { createPortal } from 'react-dom'
 import { cn } from '@/lib/utils'
@@ -351,7 +352,7 @@ export type MorphingDialogImageProps = {
   alt: string
   className?: string
   style?: React.CSSProperties
-  whileHover?: any
+  whileHover?: HTMLMotionProps<'img'>['whileHover']
 }
 
 function MorphingDialogImage({
