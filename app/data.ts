@@ -117,7 +117,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     title: 'Licenses and Certifications',
-    description: 'A collection of my professional certifications and academic achievements.',
+    description:
+      'A collection of my professional certifications and academic achievements.',
     link: '/blog/licenses-and-certifications',
     uid: 'blog-1',
   },

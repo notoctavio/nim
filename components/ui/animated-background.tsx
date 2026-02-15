@@ -1,7 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { AnimatePresence, Transition, motion } from 'motion/react'
-import {
+import React, {
   Children,
   cloneElement,
   ReactElement,
@@ -19,6 +19,13 @@ export type AnimatedBackgroundProps = {
   className?: string
   transition?: Transition
   enableHover?: boolean
+}
+
+interface ChildProps {
+  'data-id': string
+  className?: string
+  children?: React.ReactNode
+  'data-checked'?: string
 }
 
 export function AnimatedBackground({
@@ -46,8 +53,11 @@ export function AnimatedBackground({
     }
   }, [defaultValue])
 
-  return Children.map(children, (child: any, index) => {
-    const id = child.props['data-id']
+  return Children.map(children, (child, index) => {
+    if (!React.isValidElement(child)) return null
+
+    const props = child.props as ChildProps
+    const id = props['data-id']
 
     const interactionProps = enableHover
       ? {
@@ -59,10 +69,10 @@ export function AnimatedBackground({
         }
 
     return cloneElement(
-      child,
+      child as ReactElement<ChildProps>,
       {
         key: index,
-        className: cn('relative inline-flex', child.props.className),
+        className: cn('relative inline-flex', props.className),
         'data-checked': activeId === id ? 'true' : 'false',
         ...interactionProps,
       },
@@ -83,7 +93,7 @@ export function AnimatedBackground({
             />
           )}
         </AnimatePresence>
-        <div className="z-10">{child.props.children}</div>
+        <div className="z-10">{props.children}</div>
       </>,
     )
   })

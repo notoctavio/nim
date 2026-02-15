@@ -61,7 +61,7 @@ export function Magnetic({
     return () => {
       document.removeEventListener('mousemove', calculateDistance)
     }
-  }, [ref, isHovered, intensity, range])
+  }, [ref, isHovered, intensity, range, x, y])
 
   useEffect(() => {
     if (actionArea === 'parent' && ref.current?.parentElement) {
@@ -80,7 +80,7 @@ export function Magnetic({
     } else if (actionArea === 'global') {
       setIsHovered(true)
     }
-  }, [actionArea])
+  }, [actionArea, ref])
 
   const handleMouseEnter = () => {
     if (actionArea === 'self') {

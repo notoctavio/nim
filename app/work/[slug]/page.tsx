@@ -79,7 +79,7 @@ export default function WorkPage({
           {job.description}
         </p>
         {job.highlights && (
-          <ul className="mt-6 space-y-2 list-none p-0">
+          <ul className="mt-6 list-none space-y-2 p-0">
             {job.highlights.map((highlight, index) => (
               <li
                 key={index}

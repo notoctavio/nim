@@ -1,10 +1,11 @@
 export const metadata = {
   title: 'Storyteller — Junior Full-Stack Developer',
-  description: 'Building Storypilot, an AI-assisted content orchestration platform.',
+  description:
+    'Building Storypilot, an AI-assisted content orchestration platform.',
   alternates: {
     canonical: '/work/storyteller',
   },
-};
+}
 
 <div className="not-prose flex flex-col gap-3">
   <div className="flex items-center gap-3">
@@ -24,9 +25,7 @@ export const metadata = {
       Junior Full-Stack Developer
     </span>
     <span className="text-zinc-300 dark:text-zinc-700">•</span>
-    <span className="text-zinc-400 dark:text-zinc-500">
-      Dec 2025 — Present
-    </span>
+    <span className="text-zinc-400 dark:text-zinc-500">Dec 2025 — Present</span>
   </div>
   <div className="mt-2 h-px w-full bg-zinc-100 dark:bg-zinc-800/50" />
 </div>
@@ -51,10 +50,13 @@ My day-to-day involves shipping features end-to-end, from initial design to prod
 The project is built on a modern, distributed architecture that demands a high degree of technical precision.
 
 ### Frontend
+
 The dashboard is a **Next.js** application styled with **Tailwind CSS** and built on **Radix UI** primitives for accessibility. The core SDK is written in **TypeScript**, designed to be lightweight and performant across all web environments.
 
 ### Backend & Infrastructure
+
 The system follows a layered architecture using the **ABP Framework**:
+
 - **Core**: .NET 9.0 with a clean separation of Domain and Application layers.
 - **Data & Search**: SQL Server for relational data and **ElasticSearch** for high-performance content discovery.
 - **Orchestration**: Local development is managed via **.NET Aspire**, while production services run on **Azure Container Apps** managed by the Azure Developer CLI.
